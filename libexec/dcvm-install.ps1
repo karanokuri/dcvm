@@ -19,7 +19,11 @@ if((-not $Version) -or $Help)
 $Archive = Join-Path $Env:TMP "${version}.zip"
 $DestDir = Join-Path $DmdDir $Version
 
-if((Test-Path $DestDir) -and (-not $Force)) { return 0 }
+if((Test-Path $DestDir) -and (-not $Force))
+{
+    Write-Host "$Version is already exists."
+    exit 1
+}
 if((Test-Path $DestDir) -and $Force) { Remove-Item $DestDir }
 
 if($Version -match "^dmd\.([0-9]\.[0-9]{3}(\.[0-9])?)(-.*)?$")
