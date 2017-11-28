@@ -12,7 +12,7 @@ if "x%1"=="x" (
         echo    install      Install a D compiler
         echo    uninstall    Uninstall a specific D compiler
         echo    versions     List all D compiler available to dcm
-        echo    exec         Executable program of a specific D compiler
+        echo    exec         Execute command of a specific D compiler
         exit /b 1
     ) 1>&2
 )
