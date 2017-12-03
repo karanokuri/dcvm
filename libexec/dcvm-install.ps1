@@ -45,7 +45,7 @@ else
 
 wget -Uri $Url -OutFile $Archive
 
-if(-not (Test-Path $DmdDir)) { mkdir $DmdDir }
+if(-not (Test-Path $DmdDir)) { mkdir $DmdDir | Out-Null }
 
 pushd $DmdDir
 Expand-Archive $Archive
